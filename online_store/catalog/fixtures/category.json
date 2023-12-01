@@ -1,0 +1,1 @@
+[{"model": "catalog.category", "pk": 1, "fields": {"name_category": "одежда", "message_category": ""}}, {"model": "catalog.category", "pk": 2, "fields": {"name_category": "посуда", "message_category": "стеклянная, фарфоровая, керамическая"}}, {"model": "catalog.category", "pk": 3, "fields": {"name_category": "косметика", "message_category": "для лица, для ногтей"}}]
