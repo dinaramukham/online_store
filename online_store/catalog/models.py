@@ -12,4 +12,5 @@ class Product(models.Model  ):
 class Category(models.Model  ):
     name_category=models.CharField(max_length= 30)
     message_category=models.TextField()
+    created_at=models.TextField(default='none' )
 
