@@ -1,6 +1,6 @@
 from django.core.management.base   import BaseCommand
 import json
-from online_store.catalog import models
+from catalog import models
 
 class Command(BaseCommand ):
     def handle(self, *args, **options):
