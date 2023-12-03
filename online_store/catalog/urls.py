@@ -1,8 +1,9 @@
 from django.urls import path
 from . import views
-from django.conf.urls.static import  static
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.index ),
-    path('contacts/', views.contacts)
+    path('', views.index),
+    path('contacts/', views.contacts),
+    path ('products/', views.info_products)
 ]

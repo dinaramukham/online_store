@@ -1,8 +1,11 @@
 from django.shortcuts import render
-
+from .models import  Product
 # Create your views here.
 def index(request):
-    return render(request, 'catalog/index.html')
+    context={
+        'products': Product.objects.all()
+    }
+    return render(request, 'catalog/index.html', context=context  )
 def contacts(request):
     if request.method == 'POST':
         name=request.POST.get('name')
@@ -10,3 +13,5 @@ def contacts(request):
         message=request.POST.get('message')
     print(request.method)
     return render(request, 'catalog/contacts.html')
+def info_products(request):
+    return render(request, 'catalog/info_products.html')
