@@ -1,8 +1,6 @@
-from django import template
+from tempfile import template
 
-
-#register= template.library()
-
+#register=template.library()
 
 #@register.simple_tag
 #def mediapath():
