@@ -19,3 +19,4 @@ def contacts(request):
     return render(request, 'catalog/contacts.html')
 #def info_products(request):
 #    return render(request, 'catalog/info_products.html')
+
