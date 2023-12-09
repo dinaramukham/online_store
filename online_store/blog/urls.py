@@ -10,7 +10,8 @@ urlpatterns = [
     path('<int:pk>/', views.BlogDetailView.as_view(), name='blog_detail'),
     path('create/', views.BlogCreateView.as_view(), name='blog_create'),
     path('delete/<int:pk>/', views.BlogDeleteView.as_view(), name='blog_delete'),
-    path('update/<int:pk>/', views.BlogUpdateView.as_view(), name='blog_update')
+    path('update/<int:pk>/', views.BlogUpdateView.as_view(), name='blog_update'),
+#    path('published/<int:pk>/', views.published, name='blog_published'),
 ]
 
 if settings.DEBUG:

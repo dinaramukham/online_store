@@ -5,7 +5,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     title = models.CharField(max_length=30)
-    slug = models.CharField(max_length=15)
+    slug = models.CharField(max_length=150)
     message = models.TextField(default='')
     photo = models.ImageField(upload_to='media/')
     date_create = models.IntegerField()
