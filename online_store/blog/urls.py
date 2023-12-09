@@ -3,10 +3,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from online_store.blog import views
+from . import views
 
 urlpatterns = [
-    path('', views.BlogListView.as_view(), name='blog_list')
+    path('', views.BlogListView.as_view(), name='blog_list'),
+    path('<int:pk>/', views.BlogDetailView.as_view(), name='blog_detail'),
+    path('create/', views.BlogCreateView.as_view(), name='blog_create'),
+    path('delete/<int:pk>/', views.BlogDeleteView.as_view(), name='blog_delete'),
+    path('update/<int:pk>/', views.BlogUpdateView.as_view(), name='blog_update')
 ]
 
 if settings.DEBUG:

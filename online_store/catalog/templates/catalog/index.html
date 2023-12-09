@@ -8,12 +8,11 @@
     <div class="row text-center">
         {% for object in object_list%}
 
-
             <div class="col-3">
                 <div class="card mb-4 box-shadow">
                     <div class="card-header">
                         <h4 class="my-0 font-weight-normal">{{object.name}}</h4>
-                        <img src="{{ my_tags product.photo }}" style="width:380px; height:250px;"/>
+
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{object.unit_price}}</h1>
