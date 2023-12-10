@@ -3,6 +3,7 @@
 
 {% endblock %}
 {% block container %}
-    {{object.title}} {{object.slug}}
-    {{object.views_count}}
+    <p>Название-{{object.title}} slug:{{object.slug}}</p>
+    <p>Количество просмотров-{{object.views_count}}</p>
+
 {% endblock %}
