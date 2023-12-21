@@ -1,0 +1,9 @@
+{% extends 'catalog/base.html' %}
+{% block inc_title %}
+
+{% endblock %}
+{% block container %}
+    <p>Название-{{object.title}} slug:{{object.slug}}</p>
+    <p>Количество просмотров-{{object.views_count}}</p>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'catalog/base.html' %}
+
+{% block inc_title %}
+{% include 'catalog/include/inc_title.html'%}
+{% endblock %}
+
+{% block container %}
+<a class="btn btn-primary" href="{% url 'blog_create'%}">Добавить пост</a>
+    <div class="row text-center">
+        {% for object in object_list%}
+            <div class="col-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{object.title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{{object.message}}</h1>
+                        <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                            <li>дата создания {{object.date_create}}</li>
+                        </ul>
+                        <button  type="button" class="btn btn-lg btn-block btn-outline-primary">
+                            <a  href="{% url 'blog_detail'  object.pk %}" role="button">посмотреть</a>
+                        </button>
+                         <button  type="button" class="btn btn-lg btn-block btn-outline-primary">
+                            <a  href="{% url 'blog_update'  object.pk %}" role="button">изменить</a>
+                        </button>
+                        <button  type="button" class="btn btn-lg btn-block btn-outline-danger">
+                            <a  href="{% url 'blog_delete'  object.pk %}" role="button">удалить</a>
+                        </button>
+                        {% if object.published%}
+                            <a class="btn btn-warning" href="{% url 'blog_publish' object.pk %}" >показать</a>
+                        {% else %}
+                            <a class="btn btn-success" href="{% url 'blog_publish' object.pk %}" >скрыть</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,44 @@
+{% extends 'catalog/base.html' %}
+{% block inc_title %}
+{% include 'catalog/include/inc_title.html'%}
+{% endblock %}
+
+{% block container %}
+<div class="col-12" >
+  <form class="row"  method="post"  >
+    <div class="col-6">
+      <div class="card" >
+        <div class="card-header" >
+          <h3 class="card-title" >
+            Добавление продукта
+          </h3>
+          <div class="card-body" >
+             <!-- enctype-добавить аватарку    enctype="multipart/form-data"-->
+              {% csrf_token%}
+              {{form.as_p}}
+
+              <button type="submit" class="btn btn-success" >Сохранить</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" >
+        <div class="card-header" >
+          <h3 class="card-title" >
+            Добавление версии
+          </h3>
+          <div class="card-body" >
+             <!-- enctype-добавить аватарку    enctype="multipart/form-data"-->
+            {{formset.management_form}}
+            {% for form in formset.forms %}
+              {{form.as_p}}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

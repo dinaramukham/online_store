@@ -1,0 +1,23 @@
+{% extends 'catalog/base.html' %}
+
+{% block inc_title %}
+{% include 'catalog/include/inc_title.html'%}
+{% endblock %}
+
+{% block container %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="card mt-5">
+          <div class="card-body">
+            <h5 class="card-title">{{ object.name }}</h5>
+            <p class="card-text">{{ object.unit_price }}</p>
+            <p class="card-text">{{ object.message }}</p>
+            <a  href="{%url 'product_update' object.pk%}"  class="btn btn-outline-primary" >Изменить</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock%}
