@@ -22,6 +22,7 @@ fastjsonschema==2.18.1
 filelock==3.13.1
 flake8==6.1.0
 funcsigs==1.0.2
+fuzzywuzzy==0.18.0
 gcloud==0.18.3
 google-api-core==2.11.1
 google-api-python-client==2.98.0
