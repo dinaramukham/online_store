@@ -29,7 +29,7 @@ class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm
 
-    success_url = reverse_lazy('product_list')
+    success_url = reverse_lazy('users_login')
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'catalog',
-    'blog'
+    'blog',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -130,6 +131,11 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
+EMAIL_HOST='smtp.rambler.ru'
+EMAIL_PORT=993
+EMAIL_HOST_USER='empty_emailll@rambler.ru'
+EMAIL_HOST_PASSWORD='Password_empty_emaill1'
+EMAIL_USE_SSL=True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -138,3 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # для mödel prodict
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/ 'media'
+AUTH_USER_MODEL='users.User'
+
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
