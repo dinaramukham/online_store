@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView
@@ -21,11 +21,10 @@ class UserCreateView(CreateView):
     def form_valid(self, form):
         new_email = form.save()
         send_mail(
-            'Регистрауия прошла успешно!',
-            'Добро пожаловать!',
-            'empty_emailll@rambler.ru',
-            [new_email.email],
-
+            subject='Регистрауия прошла успешно!',
+            message='Добро пожаловать!',
+            from_email='empty_emailll@rambler.ru',
+            recipient_list=[new_email.email],
         )
         return super().form_valid(form)
 
