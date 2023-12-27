@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-d^3tbtyl&9f-xa7su^*7y3er5fa(gu^pg3%3scwo*lskzk$&i)
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -73,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'online_store.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -87,7 +84,6 @@ DATABASES = {
         'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -107,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -119,23 +114,22 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "/static/"
-#STATICFILES_ROOT=os.path.join(BASE_DIR, 'static')
+# STATICFILES_ROOT=os.path.join(BASE_DIR, 'static')
 # settings.py
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-EMAIL_HOST='smtp.rambler.ru'
-EMAIL_PORT=993
-EMAIL_HOST_USER='empty_emailll@rambler.ru'
-EMAIL_HOST_PASSWORD='Password_empty_emaill1'
-EMAIL_USE_SSL=True
+EMAIL_HOST = 'smtp.rambler.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'empty_emailll@rambler.ru'
+EMAIL_HOST_PASSWORD = 'Password_empty_emaill1'
+EMAIL_USE_SSL = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -143,8 +137,8 @@ EMAIL_USE_SSL=True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # для mödel prodict
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR/ 'media'
-AUTH_USER_MODEL='users.User'
+MEDIA_ROOT = BASE_DIR / 'media'
+AUTH_USER_MODEL = 'users.User'
 
-LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
