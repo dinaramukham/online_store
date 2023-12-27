@@ -7,7 +7,7 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=30, default='')
     message = models.TextField(default='')
-    photo = models.ImageField(upload_to='static/')
+    photo = models.ImageField(upload_to='static/', null=True, blank=True)
     name_category = models.CharField(max_length=30, default='')
     unit_price = models.IntegerField(null=True)
     date_of_creation = models.DateTimeField(null=True)

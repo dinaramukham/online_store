@@ -125,10 +125,10 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-EMAIL_HOST = 'smtp.rambler.ru'
-EMAIL_PORT = 993
-EMAIL_HOST_USER = 'empty_emailll@rambler.ru'
-EMAIL_HOST_PASSWORD = 'Password_empty_emaill1'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'dinara.muhametzianowa@yandex.ru'#'empty_emailll@rambler.ru' #
+EMAIL_HOST_PASSWORD = 'Lw-QB7+Ssk6,(2w'#'Password_empty_emaill1'#
 EMAIL_USE_SSL = True
 
 # Default primary key field type

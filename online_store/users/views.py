@@ -35,6 +35,8 @@ class ProfileUpdateView(UpdateView):
     template_name = 'users/change.html'
     success_url = reverse_lazy('product_list')
 
+
+
     def get_object(self, queryset=None):
         return self.request.user
 
