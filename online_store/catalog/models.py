@@ -14,6 +14,7 @@ class Product(models.Model):
     last_modified_date = models.DateTimeField(null=True)
 
     user = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, blank=True)
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

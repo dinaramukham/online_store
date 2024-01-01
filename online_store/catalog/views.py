@@ -36,6 +36,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
 
 class ProductUpdateView(LoginRequiredMixin, UpdateView):
     login_url = '/users/register/'
+
     model = Product
     form_class = ProductForm
 
