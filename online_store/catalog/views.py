@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
@@ -39,7 +40,11 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ProductForm
 
     success_url = reverse_lazy('users_login')
-
+    def get_object(self, queryset=None):
+        self.object=super().get_object(queryset)
+        if self.object.user != self.request.user:
+            raise Http404
+        return self.object
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
         #if self.object.user == User.objects.get(pk=self.kwargs.get('pk')   ) :
