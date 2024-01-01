@@ -7,6 +7,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from .forms import ProductForm, VersionForm
 from .models import Product, Version
+from .services import get_categories_cache
+
+
 #from ..users.models import User
 
 
@@ -20,7 +23,10 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'catalog/info_products.html'
-
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['category_list_cache']=get_categories_cache()
+        return context_data
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
     login_url = '/users/register/'

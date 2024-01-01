@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os.path
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -127,8 +131,8 @@ STATICFILES_DIRS = [
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'dinara.muhametzianowa@yandex.ru'#'empty_emailll@rambler.ru' #
-EMAIL_HOST_PASSWORD = 'Lw-QB7+Ssk6,(2w'#'Password_empty_emaill1'#
+EMAIL_HOST_USER = 'dinara.muhametzianowa@yandex.ru'  # 'empty_emailll@rambler.ru' #
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')   # 'Password_empty_emaill1'#
 EMAIL_USE_SSL = True
 
 # Default primary key field type
@@ -136,8 +140,18 @@ EMAIL_USE_SSL = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # для mödel prodict
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CACHE_ENABLED = True
+if CACHE_ENABLED:
+    CACHE = {
+        "default":
+        {"BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",}
+    }
+
 AUTH_USER_MODEL = 'users.User'
 
 LOGIN_REDIRECT_URL = '/'
